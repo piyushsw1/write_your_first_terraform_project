@@ -20,5 +20,17 @@ resource "aws_instance" "app_server" {
   tags = {
     Name = "Terraform_Demo"
   }
+terraform {
+  required_providers {
+    http = {
+      source = "terraform-aws-modules/http"
+      version = "2.4.1"
+    }
+  }
+}
+
+provider "http" {
+  # Configuration options
+}
 }
 
